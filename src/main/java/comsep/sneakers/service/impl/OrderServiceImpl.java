@@ -1,4 +1,6 @@
 package comsep.sneakers.service.impl;
 
-public class OrderServiceImpl {
+import comsep.sneakers.service.OrderService;
+
+public class OrderServiceImpl implements OrderService {
 }

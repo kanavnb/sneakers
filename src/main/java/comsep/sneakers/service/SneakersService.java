@@ -1,4 +1,4 @@
-package comsep.sneakers.service.impl;
+package comsep.sneakers.service;
 
-public interface SneacersService {
+public interface SneakersService {
 }
