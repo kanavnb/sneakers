@@ -1,27 +1,22 @@
 package comsep.sneakers.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import org.springframework.stereotype.Service;
-
+import lombok.*;
 @Data
 @Entity
-@Service
-@Table(name = "cart_tb")
+@Table(name = "cart_items")
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String users;
-    private String products;
-    private String quantity;
-
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "sneaker_id", nullable = false)
-    private Sneakers sneaker;
+    @JoinColumn(name = "sneaker_id")
+    private Sneaker sneaker;
+
+    private int quantity;
 }

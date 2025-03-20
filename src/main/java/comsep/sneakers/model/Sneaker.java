@@ -8,20 +8,14 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "order_items")
-public class OrderItem {
+@Table(name = "sneakers")
+public class Sneaker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
-
-    @ManyToOne
-    @JoinColumn(name = "sneaker_id")
-    private Sneaker sneaker;
-
-    private int quantity;
+    private String brand;
+    private String model;
     private double price;
+    private int stockQuantity;
 }
