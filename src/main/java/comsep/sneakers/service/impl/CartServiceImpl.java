@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class CartServiceImpl implements CartService {
     private final CartItemRepository cartItemRepository;
-    private final CartItemMapper cartItemMapper;
+    private final CartItemMapper cartItemMapper = CartItemMapper.INSTANCE;
 
 
 

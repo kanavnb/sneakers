@@ -1,6 +1,9 @@
 package comsep.sneakers.exception;
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
+@Data
 public class ErrorResponse {
     private String message;
     private int status;
@@ -11,10 +14,5 @@ public class ErrorResponse {
         this.status = status;
         this.timestamp = timestamp;
     }
-
-    // Геттеры и сеттеры
-    public String getMessage() { return message; }
-    public int getStatus() { return status; }
-    public LocalDateTime getTimestamp() { return timestamp; }
 }
 
