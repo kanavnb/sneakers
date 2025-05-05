@@ -1,13 +1,12 @@
 package comsep.sneakers.model;
 
-import com.nimbusds.oauth2.sdk.Role;
-import com.nimbusds.oauth2.sdk.token.RefreshToken;
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.*;
+
+import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users")  // Название таблицы должно быть указано явно
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,20 +18,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
     private String password;
 
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    private boolean enabled = true;
-
+    // Обратная связь с refresh tokens (опционально, но желательно)
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RefreshToken> refreshTokens = new ArrayList<>();
+    private List<RefreshToken> refreshTokens;
 }
-
-
