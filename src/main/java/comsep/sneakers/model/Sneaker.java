@@ -6,8 +6,6 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "sneakers")
 public class Sneaker {
     @Id
@@ -17,5 +15,5 @@ public class Sneaker {
     private String brand;
     private String model;
     private double price;
-    private int stockQuantity;
+    private int Quantity;
 }

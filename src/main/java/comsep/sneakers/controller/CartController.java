@@ -20,12 +20,12 @@ public class CartController {
         return cartService.addToCart(cartItemDTO);
     }
 
-    @DeleteMapping("/remove{id}")
+    @DeleteMapping("/remove/{id}")
     public void removeFromCart(@PathVariable Long id) {
         cartService.removeFromCart(id);
     }
 
-    @GetMapping("/get{userId}")
+    @GetMapping("/get/{userId}")
     public List<CartItemDTO> getCartItems(@PathVariable Long userId) {
         return cartService.getCartItems(userId);
     }

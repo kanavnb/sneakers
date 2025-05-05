@@ -22,12 +22,12 @@ public class SneakerController {
         return sneakerService.getSneakerById(id);
     }
 
-    @GetMapping("get/all")
+    @GetMapping("/get/all")
     public List<SneakerDTO> getAllSneakers() {
         return sneakerService.getAllSneakers();
     }
 
-    @DeleteMapping("/delete{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteSneaker(@PathVariable Long id) {
         sneakerService.deleteSneaker(id);
     }
